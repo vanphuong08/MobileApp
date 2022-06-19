@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.Views.ItemsPage"
+             xmlns:local="clr-namespace:MobileApp.ViewModels"  
+             xmlns:model="clr-namespace:MobileApp.Models"  
+             Shell.NavBarIsVisible="False">
+    <StackLayout>
+        <!--start header-->
+        <StackLayout Background="#1F7DC6" >
+            <Grid Padding="-130,10,0,10" Margin="-180,10,0,0">
+                <Image HeightRequest="90"  WidthRequest="90" Source="InfoAcc.png"/>
+            </Grid>
+            <Grid>
+                <Label Text="Lê Văn Phương" FontAttributes="Bold" Grid.Row="1" Grid.Column="1" FontSize="18" Margin="-100,-75,0,0" TextColor="White" ></Label>
+                <Label Text="0123456789" Grid.Row="1" Grid.Column="1" FontSize="16" TextColor="White" Margin="-100,-50,0,0"></Label>
+            </Grid>
+        </StackLayout>
+        <!--End header-->
+        
+        <!--Start Swipe-->
+        <!--End Swipe-->
+        
+        <!-- Start Content ListView-->
+        <ListView x:Name="MyListInfo" Margin="0,-6,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HeightRequest="120">
+                            <Grid Margin="-350,10,0,7">
+                                <Image  WidthRequest="50" Source="{Binding ImageIcon}"/>
+                            </Grid>
+                            <Grid Margin="80,-25,0,0" Padding="0,-14,0,5" >
+                                <Label Text="{Binding Name}" FontSize="18" TextColor="Black"></Label>
+                            </Grid>
+                            <BoxView WidthRequest="420" HeightRequest="1" HorizontalOptions="CenterAndExpand" Color="#A8A8A8" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--End Content ListView-->
+    </StackLayout>
+</ContentPage>

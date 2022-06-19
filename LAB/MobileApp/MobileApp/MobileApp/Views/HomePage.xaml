@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.Views.HomePage"
+             xmlns:ce="clr-namespace:MobileApp"
+             xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             Shell.NavBarIsVisible="False">
+
+    <!--<ContentPage.Content>
+        <tabView:SfTabView BackgroundColor="#999999" >
+            <tabView:SfTabItem Title="Favorites"> 
+                <tabView:SfTabItem.Content>
+                    <Grid BackgroundColor="Green" />
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+            <tabView:SfTabItem Title="Contacts">
+                <tabView:SfTabItem.Content>
+                    <Grid BackgroundColor="Blue" />
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+        </tabView:SfTabView>
+    </ContentPage.Content>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Trang chủ"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="20"
+                   TextColor="Red"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

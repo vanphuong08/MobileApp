@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.Views.ListEmployeePage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+              xmlns:rg="http://rotorgames.com"
+              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Shell.NavBarIsVisible="False"
+              BackgroundColor="White">
+            <!--xmlns:local="clr-namespace:Swiping"-->
+
+    <StackLayout Margin="0,-25,0,0" BackgroundColor="White">
+        <StackLayout>
+            <!--Start Header List Employee-->
+            <StackLayout HeightRequest="100" WidthRequest="600" BackgroundColor="#00A2E8">
+                <Grid>
+                    <Label Text="Danh sách nhân viên" HorizontalTextAlignment="Center"  FontAttributes="Bold" Margin="0,20,0,0" TextColor="White" FontSize="18" HorizontalOptions="Center"></Label>
+                    <ImageButton HorizontalOptions="EndAndExpand" HeightRequest="20" Margin="0,20,10,0" WidthRequest="20" Source="vectoCong.png" BackgroundColor="#00A2E8"/>
+                </Grid>
+            </StackLayout >
+            <!--End Header List Employee-->
+            <!--Start SearchBar-->
+            <StackLayout Margin="0,0,0,0" BackgroundColor="White">
+                <Frame  CornerRadius="20" Padding="0" OutlineColor="DarkGray" HasShadow="True" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
+                    <SearchBar x:Name="searchBar" Placeholder="Tìm kiếm" PlaceholderColor="#8E8E93" TextColor="#000000" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                </Frame>
+            </StackLayout>  <!--End SearchBar-->
+            <StackLayout>   <!--Start List Employee-->
+                <ListView x:Name="MyListEmployee" ItemTapped="Click_List" HasUnevenRows="True" RowHeight="70">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems Mode="Reveal">
+                                            <SwipeItem Text="Xóa"
+                                                       Clicked="Click_Delete"
+                                                       IconImageSource="IconDelete.png"
+                                                       BackgroundColor="red" />
+                                            <SwipeItem Text="Sửa"
+                                                       Clicked="Click_Edit"
+                                                       IconImageSource="IconEdit.png"
+                                                       BackgroundColor="#0079C4" />
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <StackLayout Orientation="Vertical" Spacing="3" BackgroundColor="White" HorizontalOptions="Center">
+                                         <Grid Grid.Row="0" Grid.Column="0" Margin="-325,10,0,-10" Padding="0,0,0,10" HeightRequest="40" WidthRequest="40">
+                                            <Image Source="{Binding ImageIcon}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="0" Grid.Column="1" Margin="80,-29,0,3" Padding="0,-15,0,0">
+                                            <Label Text="{Binding Name}" FontAttributes="Bold"  FontSize="16" TextColor="Black"></Label>
+                                        </Grid>
+                                        <Grid Grid.Row="1" Grid.Column="1" Margin="80,-10,0,0" Padding="0,3,0,0" >
+                                            <Label Text="{Binding Position}" FontSize="14" TextColor="Black"></Label>
+                                        </Grid>
+                                        <Grid Grid.Row="1" Grid.Column="1" Margin="80,-5,0,0" Padding="0,0,0,5" >
+                                            <Label Text="{Binding Email}" FontSize="14" TextColor="Black"></Label>
+                                        </Grid>
+                                        <Grid Grid.Row="2" Grid.Column="2" Margin="220,-25,0,5" Padding="100,0,0,0" >
+                                            <Label Text="15/06/2022" FontSize="14" TextColor="Black"></Label>
+                                        </Grid>
+                                        <BoxView WidthRequest="385" HeightRequest="1" HorizontalOptions="CenterAndExpand" Color="#A8A8A8" />
+                                    </StackLayout>
+                                </SwipeView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>    <!--End Start Employee-->
+        </StackLayout>
+    </StackLayout>
+</rg:PopupPage>

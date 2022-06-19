@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.Views.ItemDetailPage" 
+              xmlns:rg="http://rotorgames.com"
+              xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+   
+    <StackLayout
+        Padding="20,20,20,20"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="Center">
+        <StackLayout Margin="0,-5,0,-5">
+            <StackLayout BackgroundColor="#00A2E8">
+                <Grid>
+                    <Label Text="Thông tin chi tiết nhân viên" HeightRequest="50" HorizontalTextAlignment="Center"  FontAttributes="Bold" Margin="0,15,0,0" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
+                </Grid>
+            </StackLayout >
+        </StackLayout>
+        <StackLayout BackgroundColor="White" HorizontalOptions="Center" Padding="0,20,0,0">
+            <ListView x:Name="ListEmployee" Margin="0,0,0,-10"  RowHeight="350">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <StackLayout VerticalOptions="Center" >
+                                    <Image Source="{Binding ImageIcon}" HeightRequest="60" WidthRequest="60"/>
+                                    <Grid Margin="5,-3,0,0" HeightRequest="60">
+                                        <Label Text="Họ và tên:" FontAttributes="Bold" Margin="25,0,0,0" FontSize="19" TextColor="Black"/>
+                                        <Label Text="{Binding Name}" FontSize="17" Margin="150,2,0,0"  TextColor="Black"/>
+                                    </Grid>
+                                    <Grid Margin="5,-10,0,0" HeightRequest="60">
+                                        <Label Text="Địa chỉ:" FontAttributes="Bold" Margin="25,0,0,0" FontSize="19" TextColor="Black"/>
+                                        <Label Text="{Binding Address}" FontSize="17" Margin="150,2,0,0"  TextColor="Black"/>
+                                    </Grid>
+                                    <Grid Margin="5,-10,0,0" HeightRequest="60">
+                                        <Label Text="Số điện thoại:" FontAttributes="Bold" Margin="25,0,0,0" FontSize="19" TextColor="Black"/>
+                                        <Label Text="{Binding PhoneNumber}" FontSize="17" Margin="150,2,0,0"  TextColor="Black"/>
+                                    </Grid>
+                                    <Grid Margin="5,-10,0,0" HeightRequest="60">
+                                        <Label Text="Chức vụ:" FontAttributes="Bold" Margin="25,0,0,0" FontSize="19" TextColor="Black"/>
+                                        <Label Text="{Binding Position}" FontSize="17" Margin="150,2,0,0"  TextColor="Black"/>
+                                    </Grid>
+                                    <Grid Margin="5,-10,0,0" HeightRequest="60">
+                                        <Label Text="Email:" FontAttributes="Bold" Margin="25,0,0,0" FontSize="19" TextColor="Black"/>
+                                        <Label Text="{Binding Email}" FontSize="17" Margin="150,2,0,0"  TextColor="Black"/>
+                                    </Grid>
+                                    <Grid Margin="5,-10,0,0" HeightRequest="60">
+                                        <Label Text="Giơi tính:" FontAttributes="Bold" Margin="25,0,0,0" FontSize="19" TextColor="Black"/>
+                                        <Label Text="{Binding Sex}" FontSize="17" Margin="150,2,0,0"  TextColor="Black"/>
+                                    </Grid>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <Button
+            Clicked="OnClose"
+            Text="Close"
+            TextColor="Black"
+            WidthRequest="150"
+            Margin="0,-10,0,0"/>
+    </StackLayout>
+</rg:PopupPage>

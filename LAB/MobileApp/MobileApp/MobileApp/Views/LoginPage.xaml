@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileApp.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30,20,10,10" >
+            <StackLayout Padding="-40" >
+                <Image HorizontalOptions="Center" HeightRequest="450" WidthRequest="600" Source="LogoLogin.png"/>
+            </StackLayout >
+            <StackLayout Margin="20,20,20,0" Padding="20,20,20,0">
+                <!--<ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout>
+                                        --><!--<Grid Padding="-150,10,0,10" Margin="-150,10,0,0">
+                                            <Image HeightRequest="20" WidthRequest="20" Source="fi_rr_user.png"/>
+                                        </Grid>
+                                        <Grid Margin="15,-43,0,0">
+                                            <Entry x:Name="Name" Text="{Binding Name}" Placeholder="Tên đăng nhập"   
+                                                   PlaceholderColor="#828282" HeightRequest="40"   
+                                                   TextColor="Black"/>
+                                        </Grid>--><!--
+                                        <Label Text="{Binding Name}"></Label>
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Grid Padding="-150,10,0,10" Margin="-150,10,0,0">
+                                            <Image HeightRequest="20" WidthRequest="20" Source="log.png"/>
+                                        </Grid>
+                                        <Grid Margin="15,-48,0,0">
+                                            <Entry Placeholder="Nhập mật khẩu" Text="{Binding Password, Mode=TwoWay}" MaxLength="50" TextColor="Black" IsPassword="{Binding IsPassword}" />
+                                            <ImageButton WidthRequest="24" VerticalOptions="Center" TranslationY="-5" TranslationX="-10" HorizontalOptions="End"
+                                                                        Command="{Binding ToggleIsPasswordCommand}"
+                                                                        Source="eye">
+                                                <ImageButton.Triggers>
+                                                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsPassword}" Value="True" >
+                                                        <Setter Property="Source" Value="showicon" />
+                                                    </DataTrigger>
+                                                </ImageButton.Triggers>
+                                            </ImageButton>
+                                        </Grid> 
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+                <StackLayout>
+                    <Grid Padding="-150,10,0,10" Margin="-150,10,0,0">
+                        <Image HeightRequest="20" WidthRequest="20" Source="fi_rr_user.png"/>
+                    </Grid>
+                    <Grid Margin="15,-43,0,0">
+                        <Entry x:Name="Name" Text="{Binding Name}" Placeholder="Tên đăng nhập"   
+                               PlaceholderColor="#828282" HeightRequest="40"   
+                               TextColor="Black"/>
+                    </Grid>
+                </StackLayout>
+                <StackLayout>
+                    <Grid Padding="-150,10,0,10" Margin="-150,10,0,0">
+                        <Image HeightRequest="20" WidthRequest="20" Source="log.png"/>
+                    </Grid>
+                    <Grid Margin="15,-48,0,0">
+                        <Entry x:Name="Password" Placeholder="Nhập mật khẩu" Text="{Binding Password, Mode=TwoWay}" MaxLength="50" TextColor="Black" IsPassword="{Binding IsPassword}" />
+                        <ImageButton WidthRequest="24" VerticalOptions="Center" TranslationY="-5" TranslationX="-10" HorizontalOptions="End"
+                        Command="{Binding ToggleIsPasswordCommand}"
+                        Source="eye">
+                            <ImageButton.Triggers>
+                                <DataTrigger TargetType="ImageButton" Binding="{Binding IsPassword}" Value="True" >
+                                    <Setter Property="Source" Value="showicon" />
+                                </DataTrigger>
+                            </ImageButton.Triggers>
+                        </ImageButton>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Color"
+                            Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="IsChecked">
+                                <VisualState.Setters>
+                                    <Setter Property="Color"
+                            Value="#828282"  />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </CheckBox>
+                <Label Text="Tự động đăng nhập" HorizontalTextAlignment="Start" FontSize="12" VerticalTextAlignment="Center"></Label>
+                <Label Text="Quên mật khẩu?" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+
+            </StackLayout>
+            <Button Text=" Đăng nhập" Clicked="Button_Clicked" BackgroundColor="#007FCC" FontAttributes="Bold" CornerRadius="20"></Button>
+            <Label Text="Version 1.0.0"  HorizontalOptions="Center" Padding="0, 10,0,0"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
